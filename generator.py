@@ -10,10 +10,16 @@ def generate_cover_letter(job_description):
     
     client = OpenAI(api_key=api_key)
 
-    prompt = f'''\n    Generate a professional offshore cover letter for Jason Bent.\n    Highlight Stage 4 rigging, IRATA L2, hydraulic bolting and FPSO experience.\n\n    Job Description:\n    {job_description}\n    '''
+    prompt = f'''
+    Generate a professional offshore cover letter for Jason Bent.
+    Highlight Stage 4 rigging, IRATA L2, hydraulic bolting and FPSO experience.
+
+    Job Description:
+    {job_description}
+    '''
 
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-3.5-turbo",
         messages=[{"role":"user","content":prompt}]
     )
 
